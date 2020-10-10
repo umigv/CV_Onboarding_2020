@@ -109,7 +109,7 @@ websites = [
 
 
 def gen_url():
-    pub = rospy.Publisher("url", String, queue_size=10)
+    pub = rospy.Publisher("url1", String, queue_size=10)
     rospy.init_node("scanner", anonymous=True)
     rate = rospy.Rate(0.5)
     print("Publishing random URLs to /url...")

@@ -12,7 +12,7 @@ def callback(data):
 
 def listener():
     rospy.init_node("receiver", anonymous=True)
-    rospy.Subscriber("url", String, callback)
+    rospy.Subscriber("url1", String, callback)
     print("Showing URLs on Display...")
     rospy.spin()
 
