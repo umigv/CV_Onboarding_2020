@@ -30,7 +30,7 @@ def display(im, bbox):
 def QRScanner_opencv(image):
     qrDecoder = cv2.QRCodeDetector()
     # Detect and decode the qrcode
-    data,bbox,rectifiedImage = qrDecoder.detectAndDecode(img)
+    ros,bbox,rectifiedImage = qrDecoder.detectAndDecode(img)
     if len(data)>0:
         print("Decoded Data : {}".format(data))
         #display(img, bbox)
