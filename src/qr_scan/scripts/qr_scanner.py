@@ -17,6 +17,7 @@ import time
 from pathlib import Path
 
 print("hello world this is the qr scanner")
+print("another one")
 
 # print(Path('.').absolute())
 # r = requests.get("https://live.staticflickr.com/3048/2854521482_5bd41a2e1b_b.jpg").content
