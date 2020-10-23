@@ -8,3 +8,27 @@
 # run these two commands to launch fake display program:
 # source devel/setup.bash
 # rosrun url_display fake_display.py
+
+import cv2
+import time
+from picamera.array import PiRBGArray
+from picamera import PiCamera
+
+
+# initialize camera and grab reference to raw camera capture
+camera = PiCamera()
+rawCapture = PiRGBArray(camera)
+
+# allow camera to sleep for 0.1 sec
+time.sleep(0.1)
+
+# get image from camera
+camera.Capture(rawCapture, format ="bgr")
+image = rawCapture.array
+
+#display image on screen and wait for key press
+cv2.imshow("Image", image)
+cv2.waitKey(0)
+
+
+
