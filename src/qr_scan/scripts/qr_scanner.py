@@ -31,4 +31,16 @@ cv2.imshow("Image", image)
 cv2.waitKey(0)
 
 
+# CONVERTING QR CODE TO STRING
+
+if len(sys.argv) > 1:
+	inputImage = cv2.imread(sys.argv[1])
+else:
+	inputImage = cv2.imread("qr_codes/screen-0.jpg")
+  
+  
+decodedObjects = pyzbar.decode(inputImage)
+
+print(decodedObjects[0].data)
+
 
