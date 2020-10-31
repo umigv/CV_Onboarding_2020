@@ -53,16 +53,16 @@ x = 0
  
 # Load default font.
 font = ImageFont.load_default()
+
+
 def callback(data):
-    message =  data.data
+    # Takes the url from the ROS topic "url1"
+    message = data.data
     print(message)
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
- 
+    # Adds the message to the top left corner of the LED
     draw.text((x, top + 0),  message, font=font, fill=255)
-    # Display image.
-    disp.image(image)
-    disp.show()
     time.sleep(0.1)
 
        
@@ -78,5 +78,10 @@ def listener():
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
+
+
+
+
+# Calls listener() when program is run
 if __name__ == '__main__':
     listener()
